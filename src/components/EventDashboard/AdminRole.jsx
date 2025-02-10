@@ -76,6 +76,7 @@ const AdminRole = () => {
     const handleFormClose = () => {
         setShowForm(false);
         setNewEvent({ title: '', description: '', category: 'Technology', date: '' });
+        navigate('/event-dashboard');
     };
 
     const handleInputChange = (e) => {
