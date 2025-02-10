@@ -76,7 +76,6 @@ const AdminRole = () => {
     const handleFormClose = () => {
         setShowForm(false);
         setNewEvent({ title: '', description: '', category: 'Technology', date: '' });
-        navigate('/event-dashboard');
     };
 
     const handleInputChange = (e) => {
@@ -95,6 +94,7 @@ const AdminRole = () => {
     }
 
     const handleFormSubmit = async (e) => {
+        e.preventDefault();
         try {
             let response = await axios.post('https://client-management-backend.onrender.com/api/v1/create-event', newEvent);
             if (!newEvent.title || !newEvent.description || !newEvent.date) {
@@ -103,6 +103,7 @@ const AdminRole = () => {
             }
             setEvents([...events, { id: events.length + 1, ...newEvent }]);
             handleFormClose();
+            navigate('/event-dashboard');
         } catch (err) {
             console.log("Error in creating event", err);
         }
