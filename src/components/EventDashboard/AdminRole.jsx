@@ -93,6 +93,13 @@ const AdminRole = () => {
         navigate('/');
     }
 
+
+
+
+    
+    
+
+
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -156,6 +163,7 @@ const AdminRole = () => {
                                 <h3>{event.title}</h3>
                                 <p className="event-description">{event.description}</p>
                                 <span className="event-category">{event.category}</span>
+                                
                             </div>
                         ))}
                     </div>
@@ -204,6 +212,7 @@ const AdminRole = () => {
                                 <label>Event Date & Time</label>
                                 <input type="datetime-local" name="date" value={newEvent.date} onChange={handleInputChange} required />
                             </div>
+
                             <div className="form-actions">
                                 <button type="submit">Save Event</button>
                                 <button type="button" className="cancel-btn" onClick={handleFormClose}>Cancel</button>
