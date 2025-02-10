@@ -1,0 +1,222 @@
+/* Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.event-details {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.event-card-details {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.event-card-details:hover {
+  transform: translateY(-5px);
+}
+
+.event-card-details h2 {
+  color: #2c3e50;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 0.5rem;
+}
+
+.event-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-left: 4px solid #3498db;
+  border-radius: 4px;
+}
+
+.event-card-details p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  color: #555;
+}
+
+.event-card-details p strong {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.attendees-section {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.attendees-section h3 {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.attendees-section h3::before {
+  content: '👥';
+  margin-right: 0.8rem;
+}
+
+.attendees-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.attendees-section li {
+  padding: 1rem;
+  margin-bottom: 0.8rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.attendees-section li:hover {
+  background-color: #e9ecef;
+  transform: translateX(10px);
+}
+
+.attendee-name {
+  font-weight: 600;
+  color: #3498db;
+  margin-bottom: 0.3rem;
+}
+
+/* Buttons */
+.register-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  position: relative;
+  left: 870px;
+  font-weight: bold;
+  cursor: pointer;
+  height: 40px;
+  width: 180px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+.already-registered {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  font-weight: bold;
+  position: relative;
+  left: 280px;
+  cursor: pointer;
+  height: 40px;
+  width: 480px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+/* Date styling */
+.event-card-details p:nth-of-type(1) {
+  color: #e67e22;
+  font-weight: 500;
+}
+
+/* Category styling */
+.event-card-details p:nth-of-type(2) {
+  color: #9b59b6;
+  font-weight: 500;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.event-card-details,
+.attendees-section {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Attendees count badge */
+.attendees-section h3 span {
+  background-color: #2ecc71;
+  color: white;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+}
+
+/* Responsive Styles for 14-inch Laptops (max-width: 1366px) */
+@media (max-width: 1366px) {
+  /* Center buttons by removing fixed offsets */
+  .register-button,
+  .already-registered {
+    position: static;
+    display: block;
+    margin: 1rem auto;
+  }
+}
+
+/* Responsive Styles for Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .event-card-details {
+    padding: 2rem; /* Slightly reduced padding */
+  }
+  
+  .event-card-details h2 {
+    font-size: 2.2rem; /* A bit smaller heading */
+  }
+  
+  .event-description {
+    font-size: 1.05rem; /* Slight adjustment for readability */
+  }
+}
+
+/* Responsive Styles for Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .event-details {
+    padding: 0 1rem;
+  }
+  
+  .event-card-details {
+    padding: 1.5rem;
+  }
+  
+  .event-card-details h2 {
+    font-size: 2rem;
+  }
+  
+  .event-description {
+    font-size: 1rem;
+  }
+  
+  .register-button,
+  .already-registered {
+    width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+}
